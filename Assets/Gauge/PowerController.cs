@@ -26,7 +26,7 @@ public class PowerController : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (!isSliding && Input.GetKeyDown(KeyCode.Space))
             StartSliding();
 
         if (isSliding && Input.GetKeyUp(KeyCode.Space))
@@ -42,7 +42,9 @@ public class PowerController : MonoBehaviour
     private void StopSliding()
     {
         isSliding = false;
-        StopCoroutine(slidingRoutine);
+
+        if (slidingRoutine != null)
+            StopCoroutine(slidingRoutine);
     }
 
     private IEnumerator DoSliding()
