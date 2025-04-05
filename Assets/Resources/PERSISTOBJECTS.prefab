@@ -150,6 +150,8 @@ MonoBehaviour:
     m_SceneName: Martini
   - m_SceneAsset: {fileID: 102900000, guid: b64a8fa52a3aa994897ce69e97701175, type: 3}
     m_SceneName: Bubble Tea
+  - m_SceneAsset: {fileID: 102900000, guid: 0761aaef114e2fd479845d966eee486c, type: 3}
+    m_SceneName: Yogurt
 --- !u!114 &3620076782274629054
 MonoBehaviour:
   m_ObjectHideFlags: 0
