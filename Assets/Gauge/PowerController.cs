@@ -4,11 +4,15 @@ using System.Drawing;
 using System.Threading;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.U2D;
 using UnityEngine.UI;
 
 public class PowerController : MonoBehaviour
 {
+    [HideInInspector] public static UnityEvent OnStartSliding = new UnityEvent();
+    [HideInInspector] public static UnityEvent<float> OnEndSliding = new UnityEvent<float>();
+
     public float speedStart;
     public float speedEnd;
 
@@ -44,11 +48,16 @@ public class PowerController : MonoBehaviour
         isSliding = false;
 
         if (slidingRoutine != null)
+        {
             StopCoroutine(slidingRoutine);
+            OnEndSliding.Invoke(slider.value);
+        }
     }
 
     private IEnumerator DoSliding()
     {
+        OnStartSliding.Invoke();
+
         while (slider.value < slider.maxValue)
         {
             slider.value += Time.deltaTime * Mathf.Lerp(speedStart, speedEnd, slider.value);
