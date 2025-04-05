@@ -110,6 +110,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5719979089830787655}
   - component: {fileID: 8202574527498894240}
+  - component: {fileID: 3620076782274629054}
   m_Layer: 0
   m_Name: SceneLoader
   m_TagString: Untagged
@@ -144,9 +145,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: daca6648f6184d34ba6c4d0d9bea8a11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fadeDuration: 0.2
+  scenes:
+  - m_SceneAsset: {fileID: 102900000, guid: 2cda990e2423bbf4892e6590ba056729, type: 3}
+    m_SceneName: SampleScene
+  - m_SceneAsset: {fileID: 102900000, guid: b71de3c63139d064baa7e947dfe808b5, type: 3}
+    m_SceneName: Toup scene
+--- !u!114 &3620076782274629054
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5742731102222473625}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc1410f8dfdd3364781453ebc8d79977, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   blackScreen: {fileID: 5465967974033575251}
-  scenes: []
+  oliveTransition: {fileID: 4015260635132066152, guid: ae3c71a6c8c553743b0c16854a15d4b7, type: 3}
+  teaTransition: {fileID: 7327560861359877818, guid: e814f4c9306ba6447b3c1aa0028a8b08, type: 3}
 --- !u!1 &8741135162959299996
 GameObject:
   m_ObjectHideFlags: 0
