@@ -1,11 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using VictoryText;
 
 public class LevelHandler : MonoBehaviour
 {
     public float minInterval;
     public float maxInterval;
+
+    public float delayBeforeText;
+    public float textDuration;
+
+    [TextArea] public string success;
+    [TextArea] public string failTooMuch;
+    [TextArea] public string failNotEnough;
 
     public List<GameObject> gameObjectsToActivateOnSuccess;
     public List<GameObject> gameObjectsToDeactivateOnSuccess;
@@ -42,6 +50,8 @@ public class LevelHandler : MonoBehaviour
         {
             go.SetActive(false);
         }
+
+        EndTextManager.instance.SpawnText(success, delayBeforeText, textDuration, true);
     }
     private void TriggerFailureTooMuch()
     {
@@ -54,6 +64,8 @@ public class LevelHandler : MonoBehaviour
         {
             go.SetActive(false);
         }
+
+        EndTextManager.instance.SpawnText(failTooMuch, delayBeforeText, textDuration, false);
     }
 
     private void TriggerFailureNotEnough()
@@ -67,12 +79,7 @@ public class LevelHandler : MonoBehaviour
         {
             go.SetActive(false);
         }
+
+        EndTextManager.instance.SpawnText(failNotEnough, delayBeforeText, textDuration, false);
     }
-
-    //check la valeur du slider
-    //si valeur est dans le bon intervalle : success
-    //sinon : failure
-
-    //écoute le startSliding pour lancer les animations etc
-    //écoute le stopSliding pour arrêter les animations etc
 }
