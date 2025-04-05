@@ -56,6 +56,7 @@ namespace SceneLoading
                     yield return null;
                     duration -= Time.deltaTime;
                 }
+                Destroy(currentSpriteRenderer.gameObject);
             }
         }
 
