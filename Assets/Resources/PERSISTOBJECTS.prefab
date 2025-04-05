@@ -152,6 +152,8 @@ MonoBehaviour:
     m_SceneName: Bubble Tea
   - m_SceneAsset: {fileID: 102900000, guid: 0761aaef114e2fd479845d966eee486c, type: 3}
     m_SceneName: Yogurt
+  - m_SceneAsset: {fileID: 102900000, guid: bcfaecfbaa7c65949a4a48399d497632, type: 3}
+    m_SceneName: Computer
 --- !u!114 &3620076782274629054
 MonoBehaviour:
   m_ObjectHideFlags: 0
