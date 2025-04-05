@@ -1,12 +1,15 @@
 using UnityEngine;
 
-public static class Initializer
+namespace Tools_and_Scripts
 {
-    [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
-
-    public static void Execute()
+    public static class Initializer
     {
-        Debug.Log("Load Dont Destroy On Load stuff");
-        Object.DontDestroyOnLoad(Object.Instantiate(Resources.Load("PERSISTOBJECTS")));
+        [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
+
+        public static void Execute()
+        {
+            Debug.Log("Load Dont Destroy On Load stuff");
+            Object.DontDestroyOnLoad(Object.Instantiate(Resources.Load("PERSISTOBJECTS")));
+        }
     }
 }
