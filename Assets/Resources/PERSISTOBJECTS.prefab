@@ -169,6 +169,7 @@ MonoBehaviour:
   blackScreen: {fileID: 5465967974033575251}
   oliveTransition: {fileID: 4015260635132066152, guid: ae3c71a6c8c553743b0c16854a15d4b7, type: 3}
   teaTransition: {fileID: 7327560861359877818, guid: e814f4c9306ba6447b3c1aa0028a8b08, type: 3}
+  computerTransition: {fileID: 1964861584203622600, guid: f2cabdb7ad0376c4baa1544a626c3ed8, type: 3}
 --- !u!1 &8741135162959299996
 GameObject:
   m_ObjectHideFlags: 0
