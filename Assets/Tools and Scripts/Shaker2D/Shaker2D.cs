@@ -75,6 +75,21 @@ public class Shaker2D : MonoBehaviour
         AddTrauma(trauma, defaultShake);
     }
 
+    public void SetTrauma(float trauma, Type shakeType)
+    {
+        if ((shakeType & possibleShake & Type.TranslationX) != Type.None)
+            traumaX = Mathf.Clamp01(trauma);
+        if ((shakeType & possibleShake & Type.TranslationY) != Type.None)
+            traumaY = Mathf.Clamp01(trauma);
+        if ((shakeType & possibleShake & Type.Rotation) != Type.None)
+            traumaRot = Mathf.Clamp01(trauma);
+    }
+
+    public void SetTrauma(float trauma)
+    {
+        SetTrauma(trauma, defaultShake);
+    }
+
     // internal logic
     [SerializeField] float traumaX;
     [SerializeField] float traumaY;
