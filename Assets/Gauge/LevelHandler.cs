@@ -1,3 +1,4 @@
+using SceneLoading;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,6 +6,8 @@ using VictoryText;
 
 public class LevelHandler : MonoBehaviour
 {
+    public float delayBeforeNextScene;
+
     public float minInterval;
     public float maxInterval;
 
@@ -37,6 +40,8 @@ public class LevelHandler : MonoBehaviour
             TriggerSuccess();
         else
             TriggerFailureTooMuch();
+
+        SceneLoaderManager.instance.LoadNextScene(delayBeforeNextScene);
     }
 
     private void TriggerSuccess()

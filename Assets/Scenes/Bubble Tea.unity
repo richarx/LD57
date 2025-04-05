@@ -315,6 +315,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cb3b8407620ddc4fafea5b6a25daebf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  delayBeforeNextScene: 3
   minInterval: 0.7
   maxInterval: 0.8
   delayBeforeText: 0.5
@@ -579,7 +580,7 @@ GameObject:
   - component: {fileID: 289672723}
   - component: {fileID: 289672722}
   - component: {fileID: 289672726}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Straw_FailNotEnough
   m_TagString: Untagged
   m_Icon: {fileID: 0}

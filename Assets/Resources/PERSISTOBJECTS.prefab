@@ -146,10 +146,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scenes:
-  - m_SceneAsset: {fileID: 102900000, guid: 2cda990e2423bbf4892e6590ba056729, type: 3}
-    m_SceneName: SampleScene
   - m_SceneAsset: {fileID: 102900000, guid: b71de3c63139d064baa7e947dfe808b5, type: 3}
-    m_SceneName: Toup scene
+    m_SceneName: Martini
+  - m_SceneAsset: {fileID: 102900000, guid: b64a8fa52a3aa994897ce69e97701175, type: 3}
+    m_SceneName: Bubble Tea
 --- !u!114 &3620076782274629054
 MonoBehaviour:
   m_ObjectHideFlags: 0

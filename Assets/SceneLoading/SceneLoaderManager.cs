@@ -38,7 +38,6 @@ namespace SceneLoading
         {
             yield return new WaitForSeconds(delay);
             
-            string sceneName = scenes[currentSceneIndex].SceneName;
             string currentSceneName = SceneManager.GetActiveScene().name;
             
             currentSceneIndex += 1;
@@ -48,13 +47,18 @@ namespace SceneLoading
             
             if (scenes[currentSceneIndex].SceneName.Equals(currentSceneName))
                 currentSceneIndex += 1;
-            
-            yield return transitionManager.PlayTransition(sceneName, true);
+
+            if (currentSceneIndex >= scenes.Count)
+                currentSceneIndex = 0;
+
+            string sceneName = scenes[currentSceneIndex].SceneName;
+
+            yield return transitionManager.PlayTransition(currentSceneName, true);
             
             AsyncOperation loadingOperation = SceneManager.LoadSceneAsync(sceneName);
             yield return new WaitUntil(() => loadingOperation.isDone);
             
-            yield return transitionManager.PlayTransition(sceneName, false);
+            yield return transitionManager.PlayTransition(currentSceneName, false);
         }
     }
 }
