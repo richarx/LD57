@@ -6,6 +6,7 @@ using VictoryText;
 
 public class LevelHandler : MonoBehaviour
 {
+    public bool testMode;
     public float delayBeforeNextScene;
 
     public float minInterval;
@@ -41,7 +42,8 @@ public class LevelHandler : MonoBehaviour
         else
             TriggerFailureTooMuch();
 
-        SceneLoaderManager.instance.LoadNextScene(delayBeforeNextScene);
+        if (!testMode)
+            SceneLoaderManager.instance.LoadNextScene(delayBeforeNextScene);
     }
 
     private void TriggerSuccess()
