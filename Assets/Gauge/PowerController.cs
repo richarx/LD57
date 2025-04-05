@@ -52,7 +52,7 @@ public class PowerController : MonoBehaviour
         while (slider.value < slider.maxValue)
         {
             slider.value += Time.deltaTime * Mathf.Lerp(speedStart, speedEnd, slider.value);
-            shaker2D.AddTrauma(slider.value);
+            shaker2D.SetTrauma(slider.value);
             yield return null;
         }
 
