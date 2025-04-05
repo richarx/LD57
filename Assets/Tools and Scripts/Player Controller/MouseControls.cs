@@ -6,11 +6,13 @@ using UnityEngine.Events;
 
 public class MouseControls : MonoBehaviour
 {
-    const float ScreenDistanceRatio = 0.5f; // How much of the screen you need to traverse to do the movement.
     const int MaxSpeedStored = 32;
 
     [ConditionalHide(HideCondition.IsPlaying, HideType.Readonly)]
     [SerializeField] Direction4 direction;
+    [Range(0f, 1f)]
+    [SerializeField] float screenDistanceRatio = 0.2f;
+    [Space]
     [SerializeField] RailMovement target;
 
     public static UnityEvent<float> OnComplete = new();
@@ -19,7 +21,6 @@ public class MouseControls : MonoBehaviour
 
     float currentMove;
     Vector3 previousMousePos;
-    bool over;
 
     void Awake()
     {
@@ -40,11 +41,11 @@ public class MouseControls : MonoBehaviour
                               ? Screen.height
                               : Screen.width;
 
-        float ratio = currentMove / screenSizeInDir / ScreenDistanceRatio;
+        float ratio = currentMove / screenSizeInDir / screenDistanceRatio;
 
         target.MoveAt(ratio);
 
-        float speed = mouseMoveInDirThisFrame / screenSizeInDir / ScreenDistanceRatio / Time.deltaTime;
+        float speed = mouseMoveInDirThisFrame / screenSizeInDir / screenDistanceRatio / Time.deltaTime;
 
         if (speed > 0)
             storedSpeeds.Add(speed);
@@ -52,16 +53,13 @@ public class MouseControls : MonoBehaviour
         if (storedSpeeds.Count > MaxSpeedStored)
             storedSpeeds.RemoveAt(0);
 
-        if (!over && ratio >= 1f)
+        if (ratio >= 1f)
         {
             float normalizedSpeed = Mathf.Clamp01(Mathf.InverseLerp(0, 25, storedSpeeds.Average()));
 
             OnComplete.Invoke(normalizedSpeed);
 
-            over = true;
+            enabled = false;
         }
-
-        if (over && ratio < 1f)
-            over = false;
     }
 }

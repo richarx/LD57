@@ -26,7 +26,7 @@ public class LevelHandler : MonoBehaviour
     
     void Start()
     {
-        PowerController.OnEndSliding.AddListener((sliderValue) => TriggerEndLevel(sliderValue));
+        MouseControls.OnComplete.AddListener((sliderValue) => TriggerEndLevel(sliderValue));
     }
 
     private void TriggerEndLevel(float sliderValue)

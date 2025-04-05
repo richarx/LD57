@@ -18,6 +18,8 @@ public class RailMovement : MonoBehaviour
     [SerializeField] Position2D endPos;
     [Range(0f, 2f)]
     [SerializeField] float curvatureSoftness = 0.25f;
+    [Range(-180f, 180f)]
+    [SerializeField] float objectInnateRotation = 0f;
 
     public void MoveAt(float t)
     {
@@ -26,8 +28,8 @@ public class RailMovement : MonoBehaviour
         Vector2 p0 = startPos.position;
         Vector2 p3 = endPos.position;
 
-        Vector2 dir0 = Quaternion.Euler(0, 0, startPos.rotation) * Vector2.right;
-        Vector2 dir3 = Quaternion.Euler(0, 0, endPos.rotation) * Vector2.left;
+        Vector2 dir0 = Quaternion.Euler(0, 0, startPos.rotation + objectInnateRotation) * Vector2.right;
+        Vector2 dir3 = Quaternion.Euler(0, 0, endPos.rotation + objectInnateRotation) * Vector2.left;
 
         float dynamicHandleLength = Vector2.Distance(p0, p3) * curvatureSoftness;
 
@@ -35,7 +37,7 @@ public class RailMovement : MonoBehaviour
         Vector2 p2 = p3 + dir3.normalized * dynamicHandleLength;
 
         transform.position = CalculateBezierPoint(t, p0, p1, p2, p3);
-        transform.eulerAngles = new Vector3(0, 0, GetAngleOnCurve(t, p0, p1, p2, p3));
+        transform.eulerAngles = new Vector3(0, 0, GetAngleOnCurve(t, p0, p1, p2, p3) - objectInnateRotation);
     }
 
     Vector2 CalculateBezierPoint(float t, Vector2 p0, Vector2 p1, Vector2 p2, Vector2 p3)
@@ -77,8 +79,8 @@ public class RailMovement : MonoBehaviour
         Vector2 p0 = startPos.position;
         Vector2 p3 = endPos.position;
 
-        Vector2 dir0 = Quaternion.Euler(0, 0, startPos.rotation) * Vector2.right;
-        Vector2 dir3 = Quaternion.Euler(0, 0, endPos.rotation) * Vector2.left;
+        Vector2 dir0 = Quaternion.Euler(0, 0, startPos.rotation + objectInnateRotation) * Vector2.right;
+        Vector2 dir3 = Quaternion.Euler(0, 0, endPos.rotation + objectInnateRotation) * Vector2.left;
 
         float dynamicHandleLength = Vector2.Distance(p0, p3) * curvatureSoftness;
 
@@ -98,8 +100,8 @@ public class RailMovement : MonoBehaviour
 
         float triangleSizeRatio = Vector2.Distance(p0, p3);
 
-        DrawTriangleGizmo(p0, startPos.rotation, triangleSizeRatio);
-        DrawTriangleGizmo(p3, endPos.rotation, triangleSizeRatio);
+        DrawTriangleGizmo(p0, startPos.rotation + objectInnateRotation, triangleSizeRatio);
+        DrawTriangleGizmo(p3, endPos.rotation + objectInnateRotation, triangleSizeRatio);
     }
 
     void DrawTriangleGizmo(Vector3 position, float rotation, float sizeRatio)
