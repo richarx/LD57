@@ -21,6 +21,14 @@ namespace SceneLoading
             instance = this;
         }
 
+#if UNITY_EDITOR
+        private void Update()
+        {
+            if (Input.GetKeyDown(KeyCode.R))
+                SceneManager.LoadScene(SceneManager.GetActiveScene().name, LoadSceneMode.Single);
+        }
+#endif
+
         public void LoadNextScene()
         {
             string currentSceneName = SceneManager.GetActiveScene().name;
