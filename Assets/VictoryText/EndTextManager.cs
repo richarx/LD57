@@ -19,14 +19,6 @@ namespace VictoryText
             instance = this;
         }
 
-        private void Update()
-        {
-            if (Input.GetMouseButtonDown(0))
-                SpawnText("Yay !", 0.0f, 1.5f, true);
-            if (Input.GetMouseButtonDown(1))
-                SpawnText("Nay !", 0.0f, 1.5f, false);
-        }
-
         public void SpawnText(string text, float delay, float displayDuration, bool success)
         {
             StartCoroutine(SpawnTextCoroutine(text, delay, displayDuration, success));
