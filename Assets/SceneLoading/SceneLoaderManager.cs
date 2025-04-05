@@ -29,8 +29,16 @@ namespace SceneLoading
         }
 #endif
 
-        public void LoadNextScene()
+        public void LoadNextScene(float delay)
         {
+            StartCoroutine(LoadNextSceneCoroutine(delay));
+        }
+
+        private IEnumerator LoadNextSceneCoroutine(float delay)
+        {
+            yield return new WaitForSeconds(delay);
+            
+            string sceneName = scenes[currentSceneIndex].SceneName;
             string currentSceneName = SceneManager.GetActiveScene().name;
             
             currentSceneIndex += 1;
@@ -40,12 +48,7 @@ namespace SceneLoading
             
             if (scenes[currentSceneIndex].SceneName.Equals(currentSceneName))
                 currentSceneIndex += 1;
-
-            StartCoroutine(LoadNextSceneCoroutine(scenes[currentSceneIndex].SceneName));
-        }
-
-        private IEnumerator LoadNextSceneCoroutine(string sceneName)
-        {
+            
             yield return transitionManager.PlayTransition(sceneName, true);
             
             AsyncOperation loadingOperation = SceneManager.LoadSceneAsync(sceneName);
