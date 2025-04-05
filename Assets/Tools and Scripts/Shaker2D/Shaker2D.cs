@@ -80,6 +80,12 @@ public class Shaker2D : MonoBehaviour
     [SerializeField] float traumaY;
     [SerializeField] float traumaRot;
 
+    void Awake()
+    {
+        startLocalAngle = shakePivot.localEulerAngles.z;
+        startLocalPosition = shakePivot.localPosition;
+    }
+
     void Update()
     {
         // default pivot to current transform if needed
