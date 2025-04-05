@@ -1,3 +1,4 @@
+using System.Collections;
 using TMPro;
 using UnityEngine;
 
@@ -14,8 +15,15 @@ namespace VictoryText
             instance = this;
         }
 
-        public void SpawnText(string text, float displayDuration)
+        public void SpawnText(string text, float delay, float displayDuration)
         {
+            StartCoroutine(SpawnTextCoroutine(text, delay, displayDuration));
+        }
+
+        private IEnumerator SpawnTextCoroutine(string text, float delay, float displayDuration)
+        {
+            yield return new WaitForSeconds(delay);
+            
             GameObject textObject = Instantiate(textPrefab, transform.position, Quaternion.identity, transform);
 
             TextMeshProUGUI textMeshProUGUI = textObject.transform.GetChild(0).GetComponent<TextMeshProUGUI>();
