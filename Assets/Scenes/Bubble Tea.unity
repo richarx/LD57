@@ -321,15 +321,17 @@ MonoBehaviour:
   textDuration: 3
   success: YUM !
   failTooMuch: YIKES
-  failNotEnough: hem ..
+  failNotEnough: Woops
   gameObjectsToActivateOnSuccess: []
   gameObjectsToDeactivateOnSuccess: []
   gameObjectsToActivateOnFailureTooMuch:
   - {fileID: 1499718546}
   gameObjectsToDeactivateOnFailureTooMuch:
   - {fileID: 931803137}
-  gameObjectsToActivateOnFailureNotEnough: []
-  gameObjectsToDeactivateOnFailureNotEnough: []
+  gameObjectsToActivateOnFailureNotEnough:
+  - {fileID: 289672720}
+  gameObjectsToDeactivateOnFailureNotEnough:
+  - {fileID: 406208056}
 --- !u!1 &197859559
 GameObject:
   m_ObjectHideFlags: 0
@@ -656,7 +658,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!70 &289672722
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -718,7 +720,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 4
+  m_Constraints: 0
 --- !u!212 &289672724
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -780,7 +782,7 @@ Transform:
   m_GameObject: {fileID: 289672720}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0.10169585, w: 0.9948156}
-  m_LocalPosition: {x: -2.05, y: 2.13, z: 0}
+  m_LocalPosition: {x: -2.05, y: 2.3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -798,7 +800,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ab34f294d04c2240b2bd69501a84157, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  force: {x: 5, y: 1}
+  force: {x: 3, y: 1}
 --- !u!1 &347772540
 GameObject:
   m_ObjectHideFlags: 0
@@ -1095,7 +1097,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!212 &406208057
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1157,7 +1159,7 @@ Transform:
   m_GameObject: {fileID: 406208056}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0.10169585, w: 0.9948156}
-  m_LocalPosition: {x: -2.15, y: 1.23, z: 0}
+  m_LocalPosition: {x: -2.15, y: 2.87, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1546,6 +1548,83 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 3
+--- !u!1 &740774194
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 740774196}
+  - component: {fileID: 740774195}
+  m_Layer: 0
+  m_Name: Ground
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!61 &740774195
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 740774194}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 1.66471, y: -0.019134521}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 11.141319, y: 0.96173096}
+  m_EdgeRadius: 0
+--- !u!4 &740774196
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 740774194}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.88, y: -4.99, z: -9.961081}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &798307178
 GameObject:
   m_ObjectHideFlags: 0
@@ -2815,7 +2894,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1499718549}
   - component: {fileID: 1499718548}
-  - component: {fileID: 1499718547}
+  - component: {fileID: 1499718550}
   m_Layer: 0
   m_Name: Cup _FailTooMuch
   m_TagString: Untagged
@@ -2823,63 +2902,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 0
---- !u!68 &1499718547
-EdgeCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1499718546}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_EdgeRadius: 0
-  m_Points:
-  - {x: -1.8113575, y: 2.1485868}
-  - {x: -1.5382156, y: -1.9434452}
-  - {x: -0.7111244, y: -2.1613073}
-  - {x: -0.47467804, y: -2.5159616}
-  - {x: -0.9199705, y: -3.8335333}
-  - {x: -1.4036503, y: -4.891865}
-  - {x: -1.3348517, y: -7.602397}
-  - {x: -1.3584299, y: -8.1303835}
-  - {x: -1.3781345, y: -8.808595}
-  - {x: -2.5475836, y: -11.530682}
-  - {x: -0.3320036, y: -15.494031}
-  - {x: 1.5162044, y: -15.38171}
-  - {x: 4.137526, y: -12.824302}
-  - {x: 1.5037456, y: -7.437885}
-  - {x: 1.3706989, y: -2.042437}
-  - {x: 1.5199432, y: -1.9352694}
-  - {x: 1.822155, y: 2.1485868}
-  - {x: 1.8545456, y: 2.1485868}
-  m_AdjacentStartPoint: {x: 0, y: 0}
-  m_AdjacentEndPoint: {x: 0, y: 0}
-  m_UseAdjacentStartPoint: 0
-  m_UseAdjacentEndPoint: 0
 --- !u!212 &1499718548
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2949,6 +2971,51 @@ Transform:
   - {fileID: 654167899}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!68 &1499718550
+EdgeCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1499718546}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_EdgeRadius: 0
+  m_Points:
+  - {x: -1.8165264, y: 2.0145643}
+  - {x: -1.4899068, y: -1.9313622}
+  - {x: -0.95002747, y: -8.2519455}
+  - {x: 1.2555995, y: -8.278532}
+  - {x: 1.5221595, y: -1.9465046}
+  - {x: 1.8301381, y: 2.028176}
+  m_AdjacentStartPoint: {x: 0, y: 0}
+  m_AdjacentEndPoint: {x: 0, y: 0}
+  m_UseAdjacentStartPoint: 0
+  m_UseAdjacentEndPoint: 0
 --- !u!1 &1575049076
 GameObject:
   m_ObjectHideFlags: 0
@@ -3751,3 +3818,4 @@ SceneRoots:
   - {fileID: 1499718549}
   - {fileID: 406208058}
   - {fileID: 289672725}
+  - {fileID: 740774196}
