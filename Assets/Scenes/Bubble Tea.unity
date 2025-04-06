@@ -325,13 +325,11 @@ MonoBehaviour:
   failTooMuch: YIKES
   failNotEnough: Woops
   gameObjectsToActivateOnSuccess:
-  - {fileID: 1323032019}
   - {fileID: 693838111}
   gameObjectsToDeactivateOnSuccess: []
   gameObjectsToActivateOnFailureTooMuch:
   - {fileID: 1499718546}
   - {fileID: 448871142}
-  - {fileID: 1323032019}
   - {fileID: 1485377944}
   gameObjectsToDeactivateOnFailureTooMuch:
   - {fileID: 931803137}
@@ -392,7 +390,7 @@ PrefabInstance:
     - target: {fileID: 1739128053254931528, guid: f16568b4fe830c044828b08c28f0bcaf, type: 3}
       propertyPath: m_audioClip
       value: 
-      objectReference: {fileID: 8300000, guid: 2e74834e4ac5ef14ea174b94110ae6d5, type: 3}
+      objectReference: {fileID: 8300000, guid: 55ecae73a11132543bc0558098cc3909, type: 3}
     - target: {fileID: 1739128053254931528, guid: f16568b4fe830c044828b08c28f0bcaf, type: 3}
       propertyPath: m_PlayOnAwake
       value: 1
@@ -1348,7 +1346,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 1323032020}
+    m_TransformParent: {fileID: 693838112}
     m_Modifications:
     - target: {fileID: 1308692075972978607, guid: f16568b4fe830c044828b08c28f0bcaf, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1393,7 +1391,7 @@ PrefabInstance:
     - target: {fileID: 1739128053254931528, guid: f16568b4fe830c044828b08c28f0bcaf, type: 3}
       propertyPath: m_audioClip
       value: 
-      objectReference: {fileID: 8300000, guid: 55ecae73a11132543bc0558098cc3909, type: 3}
+      objectReference: {fileID: 8300000, guid: cea35b412a8d135459c337a40a2a6a59, type: 3}
     - target: {fileID: 1739128053254931528, guid: f16568b4fe830c044828b08c28f0bcaf, type: 3}
       propertyPath: m_PlayOnAwake
       value: 1
@@ -1719,6 +1717,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 593518850}
   - {fileID: 1112554032}
   m_Father: {fileID: 1356041413}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2769,38 +2768,6 @@ EdgeCollider2D:
   m_AdjacentEndPoint: {x: 0, y: 0}
   m_UseAdjacentStartPoint: 0
   m_UseAdjacentEndPoint: 0
---- !u!1 &1323032019
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1323032020}
-  m_Layer: 0
-  m_Name: Peirce Cap Sound
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!4 &1323032020
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1323032019}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 593518850}
-  m_Father: {fileID: 1356041413}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1356041412
 GameObject:
   m_ObjectHideFlags: 0
@@ -2830,7 +2797,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1323032020}
   - {fileID: 693838112}
   - {fileID: 1485377945}
   - {fileID: 451266829}
