@@ -6,7 +6,7 @@ using UnityEngine.Events;
 
 public class MouseControls : MonoBehaviour
 {
-    const int MaxSpeedStored = 32;
+    const int MaxSpeedStored = 1;
 
     [ConditionalHide(HideCondition.IsPlaying, HideType.Readonly)]
     [SerializeField] Direction4 direction;
