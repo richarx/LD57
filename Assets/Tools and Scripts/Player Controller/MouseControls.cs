@@ -44,9 +44,10 @@ public class MouseControls : MonoBehaviour
 
         previousMousePos = Input.mousePosition;
 
-        float screenSizeInDir = (direction is Direction4.Down or Direction4.Up)
-                              ? Screen.height
-                              : Screen.width;
+        //float screenSizeInDir = (direction is Direction4.Down or Direction4.Up)
+        //                      ? Screen.height
+        //                      : Screen.width;
+        float screenSizeInDir = Screen.height;
 
         float ratio = currentMove / screenSizeInDir / screenDistanceRatio;
 
