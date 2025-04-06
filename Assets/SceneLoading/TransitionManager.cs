@@ -16,6 +16,7 @@ namespace SceneLoading
         [SerializeField] private GameObject socksTransition;
         [SerializeField] private GameObject ashesTransition;
         [SerializeField] private GameObject chestTransition;
+        [SerializeField] private GameObject drugTransition;
 
         private Transform currentTransition;
         private SpriteRenderer currentSpriteRenderer;
@@ -40,8 +41,64 @@ namespace SceneLoading
                 yield return AshesTransition(transitionIN);
             else if (sceneName.Equals("Creepy Chest"))
                 yield return ChestTransition(transitionIN);
+            else if (sceneName.Equals("Drug Injection"))
+                yield return DrugTransition(transitionIN);
             else
                 yield return Tools.Fade(blackScreen, 0.7f, transitionIN);
+        }
+
+        private IEnumerator DrugTransition(bool transitionIn)
+        {
+            if (transitionIn)
+            {
+                currentTransition = Instantiate(drugTransition, Vector2.zero, Quaternion.identity, transform).transform;
+
+                Vector3 scale = Vector3.zero;
+                currentTransition.localScale = scale;
+
+                float angle = 0.0f;
+                float rotationSpeed = 45.0f;
+                
+                float duration = transitionDuration;
+                float delta = 2.5f / duration;
+                while (duration >= 0.0f)
+                {
+                    scale.x += delta * Time.deltaTime;
+                    scale.y += delta * Time.deltaTime;
+                    scale.z += delta * Time.deltaTime;
+                    currentTransition.localScale = scale;
+
+                    angle += rotationSpeed;
+                    currentTransition.localRotation = Vector2.right.AddAngleToDirection(angle).ToRotation();
+                    
+                    yield return null;
+                    duration -= Time.deltaTime;
+                }
+            }
+            else
+            {
+                Vector3 scale = new Vector3(2.5f, 2.5f, 2.5f);
+             
+                float angle = 0.0f;
+                float rotationSpeed = 180.0f;
+                
+                float duration = transitionDuration;
+                float delta = 2.5f / duration;
+                while (duration >= 0.0f)
+                {
+                    scale.x -= delta * Time.deltaTime;
+                    scale.y -= delta * Time.deltaTime;
+                    scale.z -= delta * Time.deltaTime;
+                    currentTransition.localScale = scale;
+                    
+                    angle += rotationSpeed;
+                    currentTransition.localRotation = Vector2.right.AddAngleToDirection(angle).ToRotation();
+                    
+                    yield return null;
+                    duration -= Time.deltaTime;
+                }
+                Destroy(currentTransition.gameObject);
+            }
         }
 
         private IEnumerator ChestTransition(bool transitionIn)
@@ -79,6 +136,7 @@ namespace SceneLoading
                     yield return null;
                     duration -= Time.deltaTime;
                 }
+                Destroy(currentTransition.gameObject);
             }
         }
 
