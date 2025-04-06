@@ -171,10 +171,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc1410f8dfdd3364781453ebc8d79977, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  transitionDuration: 0.7
   blackScreen: {fileID: 5465967974033575251}
   oliveTransition: {fileID: 4015260635132066152, guid: ae3c71a6c8c553743b0c16854a15d4b7, type: 3}
   teaTransition: {fileID: 7327560861359877818, guid: e814f4c9306ba6447b3c1aa0028a8b08, type: 3}
   computerTransition: {fileID: 1964861584203622600, guid: f2cabdb7ad0376c4baa1544a626c3ed8, type: 3}
+  mouthTransition: {fileID: 8199304031193578603, guid: ba0da304a1f7e5d4786c9c014ff89486, type: 3}
 --- !u!1 &8741135162959299996
 GameObject:
   m_ObjectHideFlags: 0
