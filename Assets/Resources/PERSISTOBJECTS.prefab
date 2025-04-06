@@ -161,6 +161,8 @@ MonoBehaviour:
     m_SceneName: Glotte
   - m_SceneAsset: {fileID: 102900000, guid: 547fed1be08fd674e88091eed50cf75a, type: 3}
     m_SceneName: Drug Injection
+  - m_SceneAsset: {fileID: 102900000, guid: dd1ef6b0dec43784ab261caf4452a79a, type: 3}
+    m_SceneName: Mom's Ashes
 --- !u!114 &3620076782274629054
 MonoBehaviour:
   m_ObjectHideFlags: 0

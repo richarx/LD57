@@ -26,4 +26,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Drug Injection.unity
     guid: 547fed1be08fd674e88091eed50cf75a
+  - enabled: 1
+    path: Assets/Scenes/Mom's Ashes.unity
+    guid: dd1ef6b0dec43784ab261caf4452a79a
   m_configObjects: {}
