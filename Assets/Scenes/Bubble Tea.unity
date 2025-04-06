@@ -1060,7 +1060,6 @@ GameObject:
   - component: {fileID: 448871147}
   - component: {fileID: 448871146}
   - component: {fileID: 448871145}
-  - component: {fileID: 448871144}
   m_Layer: 0
   m_Name: Straw_FailTooMuch
   m_TagString: Untagged
@@ -1083,27 +1082,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 575955749}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -11.674}
---- !u!114 &448871144
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 448871142}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 89146d466e356284395de7a2258a8b39, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  startPos:
-    position: {x: -1.94, y: 4.15}
-    rotation: -11.674
-  endPos:
-    position: {x: -1.94, y: 1.78}
-    rotation: -11.674
-  curvatureSoftness: 0.25
-  objectInnateRotation: -78.5
-  gizmoCurveResolution: 16
 --- !u!70 &448871145
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

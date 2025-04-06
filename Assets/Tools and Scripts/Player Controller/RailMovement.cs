@@ -7,12 +7,6 @@ public class RailMovement : MonoBehaviour
     const float GizmoTriangleAngle = 140f;
     const float GizmoTriangleSize = 0.1f;
 
-    [Serializable] struct Position2D
-    {
-        public Vector2 position;
-        public float rotation;
-    }
-
     [Header("Parameters")]
     [SerializeField] Position2D startPos;
     [SerializeField] Position2D endPos;
