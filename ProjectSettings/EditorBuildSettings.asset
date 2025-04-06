@@ -6,11 +6,11 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Martini.unity
-    guid: b71de3c63139d064baa7e947dfe808b5
-  - enabled: 1
     path: Assets/Scenes/Bubble Tea.unity
     guid: b64a8fa52a3aa994897ce69e97701175
+  - enabled: 1
+    path: Assets/Scenes/Martini.unity
+    guid: b71de3c63139d064baa7e947dfe808b5
   - enabled: 1
     path: Assets/Scenes/Yogurt.unity
     guid: 0761aaef114e2fd479845d966eee486c

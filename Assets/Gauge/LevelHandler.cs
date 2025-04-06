@@ -42,7 +42,7 @@ public class LevelHandler : MonoBehaviour
         else
             TriggerFailureTooMuch();
 
-        if (!testMode)
+        if (!testMode && Application.isEditor)
             SceneLoaderManager.instance.LoadNextScene(delayBeforeNextScene);
     }
 
