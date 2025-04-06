@@ -317,7 +317,7 @@ MonoBehaviour:
   delayBeforeNextScene: 3
   minInterval: 0.3
   maxInterval: 0.7
-  delayBeforeText: 0.5
+  delayBeforeText: 1
   textDuration: 3
   success: depth metal
   failTooMuch: 'in too deep
