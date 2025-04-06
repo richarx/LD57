@@ -1541,7 +1541,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   testMode: 0
   delayBeforeNextScene: 3
-  minInterval: 0.2
+  minInterval: 0.3
   maxInterval: 0.7
   delayBeforeText: 1
   textDuration: 3

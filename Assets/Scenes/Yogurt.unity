@@ -169,8 +169,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   testMode: 0
   delayBeforeNextScene: 3
-  minInterval: 0.7
-  maxInterval: 0.8
+  minInterval: 0.3
+  maxInterval: 0.7
   delayBeforeText: 0.5
   textDuration: 3
   success: Dig in !
