@@ -201,6 +201,27 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: VamPire_5
+      rect:
+        serializedVersion: 2
+        x: 150
+        y: 32
+        width: 84
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f0f4199dd5876594fb3ece0eafbeacc3
+      internalID: -259699553
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -217,6 +238,7 @@ TextureImporter:
       VamPire_2: -1006155417
       VamPire_3: -2043721686
       VamPire_4: -2104972352
+      VamPire_5: -259699553
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
