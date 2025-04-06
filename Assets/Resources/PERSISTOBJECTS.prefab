@@ -178,6 +178,7 @@ MonoBehaviour:
   computerTransition: {fileID: 1964861584203622600, guid: f2cabdb7ad0376c4baa1544a626c3ed8, type: 3}
   mouthTransition: {fileID: 8199304031193578603, guid: ba0da304a1f7e5d4786c9c014ff89486, type: 3}
   yourtTransition: {fileID: 7327560861359877818, guid: 8c3388572a0c6fd4c8a42c22fe8f1f3f, type: 3}
+  socksTransition: {fileID: 2976067079144774073, guid: eba9f7a4df4b5a449bf921067ec0ec63, type: 3}
 --- !u!1 &8741135162959299996
 GameObject:
   m_ObjectHideFlags: 0

@@ -13,6 +13,7 @@ namespace SceneLoading
         [SerializeField] private GameObject computerTransition;
         [SerializeField] private GameObject mouthTransition;
         [SerializeField] private GameObject yourtTransition;
+        [SerializeField] private GameObject socksTransition;
 
         private Transform currentTransition;
         private SpriteRenderer currentSpriteRenderer;
@@ -31,9 +32,13 @@ namespace SceneLoading
                 yield return MouthTransition(transitionIN);
             else if (sceneName.Equals("Yogurt"))
                 yield return YogurtTransition(transitionIN);
+            else if (sceneName.Equals("Nail in the Foot"))
+                yield return SaucetteTransition(transitionIN);
             else
                 yield return Tools.Fade(blackScreen, 0.7f, transitionIN);
         }
+
+        
 
         private IEnumerator MouthTransition(bool transitionIn)
         {
@@ -159,6 +164,36 @@ namespace SceneLoading
                 while (duration >= 0.0f)
                 {
                     currentTransition.position = new Vector3(0.0f, currentTransition.position.y + delta * Time.deltaTime, 0.0f);
+                    yield return null;
+                    duration -= Time.deltaTime;
+                }
+                Destroy(currentTransition.gameObject);
+            }
+        }
+        
+        private IEnumerator SaucetteTransition(bool transitionIn)
+        {
+            if (transitionIn)
+            {
+                Vector2 startPosition = new Vector2(20.5f, 0.0f);
+                currentTransition = Instantiate(socksTransition, startPosition, Quaternion.identity, transform).transform;
+
+                float duration = transitionDuration;
+                float delta = 20.5f / duration;
+                while (duration >= 0.0f)
+                {
+                    currentTransition.position = new Vector3(currentTransition.position.x - delta * Time.deltaTime, 0.0f, 0.0f);
+                    yield return null;
+                    duration -= Time.deltaTime;
+                }
+            }
+            else
+            {
+                float duration = transitionDuration;
+                float delta = 20.5f / duration;
+                while (duration >= 0.0f)
+                {
+                    currentTransition.position = new Vector3(currentTransition.position.x + delta * Time.deltaTime, 0.0f, 0.0f);
                     yield return null;
                     duration -= Time.deltaTime;
                 }
