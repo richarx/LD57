@@ -11,6 +11,8 @@ namespace SceneLoading
         
         public static SceneLoaderManager instance;
 
+        public static bool IsTransitioning { get; private set; }
+
         private TransitionManager transitionManager;
         
         private int currentSceneIndex;
@@ -53,12 +55,14 @@ namespace SceneLoading
 
             string sceneName = scenes[currentSceneIndex].SceneName;
 
+            IsTransitioning = true;
             yield return transitionManager.PlayTransition(currentSceneName, true);
             
             AsyncOperation loadingOperation = SceneManager.LoadSceneAsync(sceneName);
             yield return new WaitUntil(() => loadingOperation.isDone);
             
             yield return transitionManager.PlayTransition(currentSceneName, false);
+            IsTransitioning = false;
         }
     }
 }

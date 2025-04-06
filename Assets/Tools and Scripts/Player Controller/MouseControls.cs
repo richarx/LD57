@@ -1,4 +1,5 @@
 using InspectorAttribute;
+using SceneLoading;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -29,6 +30,12 @@ public class MouseControls : MonoBehaviour
 
     void Update()
     {
+        if (SceneLoaderManager.IsTransitioning)
+        {
+            target.MoveAt(0);
+            return;
+        }
+
         Vector2 mouseMoveThisFrame = (previousMousePos - Input.mousePosition);
 
         float mouseMoveInDirThisFrame = direction.GetValueInDirection(mouseMoveThisFrame);
