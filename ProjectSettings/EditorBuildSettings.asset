@@ -35,4 +35,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Barbecue.unity
     guid: 014d8a93c7c21c540b733195c6efaf5c
+  - enabled: 1
+    path: Assets/Scenes/Vampire.unity
+    guid: f8b9db5af4236574898d35d41f060f7c
   m_configObjects: {}

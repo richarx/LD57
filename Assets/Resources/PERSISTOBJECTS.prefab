@@ -161,6 +161,8 @@ MonoBehaviour:
     m_SceneName: Barbecue
   - m_SceneAsset: {fileID: 102900000, guid: dd1ef6b0dec43784ab261caf4452a79a, type: 3}
     m_SceneName: Mom's Ashes
+  - m_SceneAsset: {fileID: 102900000, guid: f8b9db5af4236574898d35d41f060f7c, type: 3}
+    m_SceneName: Vampire
   - m_SceneAsset: {fileID: 102900000, guid: 547fed1be08fd674e88091eed50cf75a, type: 3}
     m_SceneName: Drug Injection
   - m_SceneAsset: {fileID: 102900000, guid: 0761aaef114e2fd479845d966eee486c, type: 3}
