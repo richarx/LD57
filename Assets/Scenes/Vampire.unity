@@ -209,7 +209,7 @@ MonoBehaviour:
   maxInterval: 0.7
   delayBeforeText: 0.5
   textDuration: 3
-  success: "Sweet dreams\t"
+  success: Sweet dreams
   failTooMuch: Sucks
   failNotEnough: Team Edward
   gameObjectsToActivateOnSuccess:
