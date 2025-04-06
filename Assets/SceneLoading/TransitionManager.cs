@@ -12,6 +12,7 @@ namespace SceneLoading
         [SerializeField] private GameObject teaTransition;
         [SerializeField] private GameObject computerTransition;
         [SerializeField] private GameObject mouthTransition;
+        [SerializeField] private GameObject yourtTransition;
 
         private Transform currentTransition;
         private SpriteRenderer currentSpriteRenderer;
@@ -28,6 +29,8 @@ namespace SceneLoading
                 yield return ComputerTransition(transitionIN);
             else if (sceneName.Equals("Glotte"))
                 yield return MouthTransition(transitionIN);
+            else if (sceneName.Equals("Yogurt"))
+                yield return YogurtTransition(transitionIN);
             else
                 yield return Tools.Fade(blackScreen, 0.7f, transitionIN);
         }
@@ -100,6 +103,36 @@ namespace SceneLoading
                     duration -= Time.deltaTime;
                 }
                 Destroy(currentSpriteRenderer.gameObject);
+            }
+        }
+        
+        private IEnumerator YogurtTransition(bool transitionIn)
+        {
+            if (transitionIn)
+            {
+                Vector2 startPosition = new Vector2(0.0f, 13.0f);
+                currentTransition = Instantiate(yourtTransition, startPosition, Quaternion.identity, transform).transform;
+
+                float duration = transitionDuration;
+                float delta = 13.0f / duration;
+                while (duration >= 0.0f)
+                {
+                    currentTransition.position = new Vector3(0.0f, currentTransition.position.y - delta * Time.deltaTime, 0.0f);
+                    yield return null;
+                    duration -= Time.deltaTime;
+                }
+            }
+            else
+            {
+                float duration = transitionDuration;
+                float delta = 13.0f / duration;
+                while (duration >= 0.0f)
+                {
+                    currentTransition.position = new Vector3(0.0f, currentTransition.position.y + delta * Time.deltaTime, 0.0f);
+                    yield return null;
+                    duration -= Time.deltaTime;
+                }
+                Destroy(currentTransition.gameObject);
             }
         }
 
