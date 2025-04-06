@@ -58,7 +58,7 @@ public class LevelHandler : MonoBehaviour
             go.SetActive(false);
         }
 
-        EndTextManager.instance.SpawnText(success, delayBeforeText, textDuration, true);
+        EndTextManager.instance.SpawnText(success, delayBeforeText, textDuration, EndTextManager.ScoreState.Success);
     }
     private void TriggerFailureTooMuch()
     {
@@ -72,7 +72,7 @@ public class LevelHandler : MonoBehaviour
             go.SetActive(false);
         }
 
-        EndTextManager.instance.SpawnText(failTooMuch, delayBeforeText, textDuration, false);
+        EndTextManager.instance.SpawnText(failTooMuch, delayBeforeText, textDuration, EndTextManager.ScoreState.TooMuch);
     }
 
     private void TriggerFailureNotEnough()
@@ -87,6 +87,6 @@ public class LevelHandler : MonoBehaviour
             go.SetActive(false);
         }
 
-        EndTextManager.instance.SpawnText(failNotEnough, delayBeforeText, textDuration, false);
+        EndTextManager.instance.SpawnText(failNotEnough, delayBeforeText, textDuration, EndTextManager.ScoreState.NotEnough);
     }
 }

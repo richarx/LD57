@@ -100,6 +100,7 @@ MonoBehaviour:
   textPrefab: {fileID: 7210448586102993314, guid: 63c274795dbcfe64e834fcfbbaa2cb51, type: 3}
   faceSuccessPrefab: {fileID: 541962575489057542, guid: 1b407871e1e757d4f885e5834fa9f845, type: 3}
   faceFailurePrefab: {fileID: 3412099886104000103, guid: b6156c266569fa842aeb1afd1ed02ca4, type: 3}
+  faceFailureMidPrefab: {fileID: 541962575489057542, guid: ce46bf00009f84a47b74e66a63c795b4, type: 3}
 --- !u!1 &5742731102222473625
 GameObject:
   m_ObjectHideFlags: 0
