@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 6284d636337b32c429dfd20086d5e396
+guid: 0586bbb94d4555a4490088911cbcef50
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -97,7 +97,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Foot_blood_0
+      name: Foot_Blood_2_0
       rect:
         serializedVersion: 2
         x: 8
@@ -105,98 +105,98 @@ TextureImporter:
         width: 156
         height: 243
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c36bc147fab6aa74d8e89a24cf8748c8
-      internalID: 2092422206
+      spriteID: 18d25996c9ab0c949b11b225cdcffc05
+      internalID: -1338417720
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Foot_blood_1
+      name: Foot_Blood_2_1
       rect:
         serializedVersion: 2
-        x: 225
+        x: 224
         y: 413
         width: 156
         height: 243
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 51a59ed3d8d25e649b49b41fb43c8df1
-      internalID: 802598682
+      spriteID: a76608cabad36284e8193eb06332e591
+      internalID: 1752821753
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Foot_blood_2
+      name: Foot_Blood_2_2
       rect:
         serializedVersion: 2
-        x: 426
-        y: 416
+        x: 427
+        y: 413
         width: 156
-        height: 240
+        height: 243
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 82fe37e5baa35754cbf93bc0cb1ac506
-      internalID: -320777469
+      spriteID: c7eac6dce1bf2284bb53fb755b3c64a4
+      internalID: -602064280
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Foot_blood_3
+      name: Foot_Blood_2_3
       rect:
         serializedVersion: 2
-        x: 7
+        x: 10
         y: 136
         width: 156
-        height: 240
+        height: 243
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5dc4d55f6cff367488ca31c278b8f2be
-      internalID: -928913344
+      spriteID: 0aa5e07717f4ecc4e931a6133baa33d4
+      internalID: 718874388
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Foot_blood_4
+      name: Foot_Blood_2_4
       rect:
         serializedVersion: 2
         x: 220
         y: 134
         width: 156
-        height: 240
+        height: 243
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 762810aff8218374ea388bf5571314e1
-      internalID: -1657246985
+      spriteID: 1b06b96ba1a539d47a0cd1f45e605269
+      internalID: 909795465
       vertices: []
       indices: 
       edges: []
@@ -212,11 +212,11 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Foot_blood_0: 2092422206
-      Foot_blood_1: 802598682
-      Foot_blood_2: -320777469
-      Foot_blood_3: -928913344
-      Foot_blood_4: -1657246985
+      Foot_Blood_2_0: -1338417720
+      Foot_Blood_2_1: 1752821753
+      Foot_Blood_2_2: -602064280
+      Foot_Blood_2_3: 718874388
+      Foot_Blood_2_4: 909795465
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
