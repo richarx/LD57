@@ -3,18 +3,23 @@ using Random = UnityEngine.Random;
 
 public class RandomShaking : MonoBehaviour
 {
-    [SerializeField] private float shakePower;
+    [SerializeField] public float shakePower;
+    [SerializeField] private bool useLocalPosition;
+
     private float lastShakeTimestamp;
 
     private Vector2 startPosition;
     
     private void Start()
     {
-        startPosition = transform.position;
+        startPosition = useLocalPosition ? transform.localPosition : transform.position;
     }
 
     private void Update()
     {
-        transform.position = startPosition + Random.insideUnitCircle.normalized * shakePower;
+        if (useLocalPosition)
+            transform.localPosition = startPosition + Random.insideUnitCircle.normalized * shakePower;
+        else
+            transform.position = startPosition + Random.insideUnitCircle.normalized * shakePower;
     }
 }

@@ -169,6 +169,8 @@ MonoBehaviour:
     m_SceneName: Yogurt
   - m_SceneAsset: {fileID: 102900000, guid: 5f0dde914c4d35b4889208349ac53f5c, type: 3}
     m_SceneName: Nail in the Foot
+  - m_SceneAsset: {fileID: 102900000, guid: 48deec776cb3f0f4d9d455878d184595, type: 3}
+    m_SceneName: Knife in the Eye
 --- !u!114 &3620076782274629054
 MonoBehaviour:
   m_ObjectHideFlags: 0
