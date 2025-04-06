@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 
@@ -12,13 +13,20 @@ public class SqueezeAndStretch : MonoBehaviour
     [SerializeField] [Range(0.0f, 2.0f)]
     private float delay;
     [SerializeField] private Transform GraphicsObject;
-
+    [SerializeField] private bool triggerOnStart;
+    
     private Coroutine SqueezeRoutine;
     Vector3 originalSize = Vector3.one;
 
     private void Awake()
     {
         originalSize = GraphicsObject.transform.localScale;
+    }
+
+    private void Start()
+    {
+        if (triggerOnStart)
+            Trigger();
     }
 
     public void Trigger(bool deactivateOnFinish = false)

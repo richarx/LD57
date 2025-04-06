@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Nail in the Foot.unity
     guid: 5f0dde914c4d35b4889208349ac53f5c
+  - enabled: 1
+    path: Assets/Scenes/Glotte.unity
+    guid: e6d9884ba45c0854497b36b340a06647
   m_configObjects: {}

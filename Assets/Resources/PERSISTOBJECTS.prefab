@@ -157,6 +157,8 @@ MonoBehaviour:
     m_SceneName: Computer
   - m_SceneAsset: {fileID: 102900000, guid: 5f0dde914c4d35b4889208349ac53f5c, type: 3}
     m_SceneName: Nail in the Foot
+  - m_SceneAsset: {fileID: 102900000, guid: e6d9884ba45c0854497b36b340a06647, type: 3}
+    m_SceneName: Glotte
 --- !u!114 &3620076782274629054
 MonoBehaviour:
   m_ObjectHideFlags: 0
