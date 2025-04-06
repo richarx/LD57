@@ -157,6 +157,8 @@ MonoBehaviour:
     m_SceneName: Creepy Chest
   - m_SceneAsset: {fileID: 102900000, guid: e6d9884ba45c0854497b36b340a06647, type: 3}
     m_SceneName: Glotte
+  - m_SceneAsset: {fileID: 102900000, guid: 014d8a93c7c21c540b733195c6efaf5c, type: 3}
+    m_SceneName: Barbecue
   - m_SceneAsset: {fileID: 102900000, guid: dd1ef6b0dec43784ab261caf4452a79a, type: 3}
     m_SceneName: Mom's Ashes
   - m_SceneAsset: {fileID: 102900000, guid: 547fed1be08fd674e88091eed50cf75a, type: 3}
