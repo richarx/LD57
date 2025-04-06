@@ -17,6 +17,7 @@ namespace SceneLoading
         [SerializeField] private GameObject ashesTransition;
         [SerializeField] private GameObject chestTransition;
         [SerializeField] private GameObject drugTransition;
+        [SerializeField] private GameObject spaceTransition;
 
         private Transform currentTransition;
         private SpriteRenderer currentSpriteRenderer;
@@ -43,8 +44,27 @@ namespace SceneLoading
                 yield return ChestTransition(transitionIN);
             else if (sceneName.Equals("Drug Injection"))
                 yield return DrugTransition(transitionIN);
+            else if (sceneName.Equals("Barbecue"))
+                yield return SpaceTransition(transitionIN);
             else
                 yield return Tools.Fade(blackScreen, 0.7f, transitionIN);
+        }
+
+        private IEnumerator SpaceTransition(bool transitionIn)
+        {
+            if (transitionIn)
+            {
+                yield return Tools.Fade(blackScreen, 0.4f, true);
+                currentTransition = Instantiate(spaceTransition, Vector2.zero, Quaternion.identity, transform).transform;
+                yield return Tools.Fade(blackScreen, 0.1f, false);
+                yield return new WaitForSeconds(Mathf.Max(transitionDuration, 0.3f + 1.8f));
+            }
+            else
+            {
+                yield return Tools.Fade(blackScreen, 0.3f, true);
+                Destroy(currentTransition.gameObject);
+                yield return Tools.Fade(blackScreen, 0.4f, false);
+            }
         }
 
         private IEnumerator DrugTransition(bool transitionIn)

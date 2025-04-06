@@ -190,6 +190,7 @@ MonoBehaviour:
   ashesTransition: {fileID: 7651689689110265367, guid: 0625bb17c2ab8a64cb1f9b9c7d644b80, type: 3}
   chestTransition: {fileID: 2287263820088043414, guid: f9eb659fd7c6be247a70beeff02266b6, type: 3}
   drugTransition: {fileID: 5856427821957158084, guid: 7780b19fbad4ae14f804009b76606c03, type: 3}
+  spaceTransition: {fileID: 1421200309435508562, guid: 3c56ba9d8d660e14980154b5a23e5058, type: 3}
 --- !u!1 &8741135162959299996
 GameObject:
   m_ObjectHideFlags: 0
