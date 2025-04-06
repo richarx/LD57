@@ -174,7 +174,7 @@ MonoBehaviour:
   delayBeforeText: 0.5
   textDuration: 3
   success: Dig in !
-  failTooMuch: ?!!!!
+  failTooMuch: Too deep
   failNotEnough: ?!
   gameObjectsToActivateOnSuccess: []
   gameObjectsToDeactivateOnSuccess: []
@@ -263,6 +263,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   force: {x: 5, y: 1}
+  onStart: 1
 --- !u!212 &228447689
 SpriteRenderer:
   m_ObjectHideFlags: 0

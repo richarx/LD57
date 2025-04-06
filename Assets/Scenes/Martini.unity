@@ -1059,9 +1059,9 @@ MonoBehaviour:
   maxInterval: 0.7
   delayBeforeText: 1
   textDuration: 3
-  success: VERY GOOD
-  failTooMuch: OUCH
-  failNotEnough: oh..
+  success: Shaken not stirred
+  failTooMuch: Wasted
+  failNotEnough: Weak
   gameObjectsToActivateOnSuccess:
   - {fileID: 1946416952}
   gameObjectsToDeactivateOnSuccess:

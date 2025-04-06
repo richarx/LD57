@@ -740,6 +740,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   force: {x: -7, y: 3}
+  onStart: 1
 --- !u!70 &1137754220
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -1189,8 +1190,8 @@ MonoBehaviour:
   maxInterval: 0.7
   delayBeforeText: 0.5
   textDuration: 3
-  success: 'Delicious ! '
-  failTooMuch: AAAAH
+  success: Nailed it
+  failTooMuch: .. Delicious
   failNotEnough: Disappointing ..
   gameObjectsToActivateOnSuccess: []
   gameObjectsToDeactivateOnSuccess: []

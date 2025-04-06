@@ -1242,9 +1242,9 @@ MonoBehaviour:
   maxInterval: 0.7
   delayBeforeText: 0.5
   textDuration: 3
-  success: Wow !
-  failTooMuch: Oops
-  failNotEnough: mmh..
+  success: My little friend
+  failTooMuch: Too deep
+  failNotEnough: Wait for me
   gameObjectsToActivateOnSuccess:
   - {fileID: 157414955}
   - {fileID: 1087941854}

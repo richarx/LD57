@@ -1818,9 +1818,9 @@ MonoBehaviour:
   maxInterval: 0.7
   delayBeforeText: 0.5
   textDuration: 3
-  success: ahh
-  failTooMuch: AHH
-  failNotEnough: come on !
+  success: Juiced
+  failTooMuch: Way too deep
+  failNotEnough: First time ?
   gameObjectsToActivateOnSuccess:
   - {fileID: 150820372}
   - {fileID: 424006115}

@@ -1292,9 +1292,9 @@ MonoBehaviour:
   maxInterval: 0.7
   delayBeforeText: 0.5
   textDuration: 3
-  success: Excellent !
+  success: Bullseye
   failTooMuch: MAMA
-  failNotEnough: ehh
+  failNotEnough: Never went to a party ...
   gameObjectsToActivateOnSuccess:
   - {fileID: 1693259327903911045}
   - {fileID: 224385035}

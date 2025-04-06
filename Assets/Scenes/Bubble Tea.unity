@@ -321,9 +321,9 @@ MonoBehaviour:
   maxInterval: 0.7
   delayBeforeText: 0.5
   textDuration: 3
-  success: YUM !
-  failTooMuch: YIKES
-  failNotEnough: Woops
+  success: Bobalicious !
+  failTooMuch: Wow ...
+  failNotEnough: Come on !
   gameObjectsToActivateOnSuccess:
   - {fileID: 693838111}
   gameObjectsToDeactivateOnSuccess: []

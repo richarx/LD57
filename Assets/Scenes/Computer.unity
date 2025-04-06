@@ -1304,9 +1304,9 @@ MonoBehaviour:
   maxInterval: 0.7
   delayBeforeText: 1
   textDuration: 3
-  success: VERY GOOD
-  failTooMuch: OUCH
-  failNotEnough: oh..
+  success: Sweet tunes
+  failTooMuch: DETECTED_MEMORY_CORRUPTION
+  failNotEnough: Wrong hole ?
   gameObjectsToActivateOnSuccess:
   - {fileID: 812265323}
   - {fileID: 1791113536}
