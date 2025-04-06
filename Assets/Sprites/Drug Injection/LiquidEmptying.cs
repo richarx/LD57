@@ -30,6 +30,7 @@ public class LiquidEmptying : MonoBehaviour
         while (timer < spawnDuration)
         {
             GameObject dropTemp = Instantiate(dropPrefab, dropSpawnPosition.position, Quaternion.identity);
+            dropTemp.transform.eulerAngles = new Vector3(0, 0, Random.Range(-60, 0));
             Vector2 newForce = new Vector2(Random.Range(xRandomMin, xRandomMax), Random.Range(yRandomMin, yRandomMax));
 
             if (dropTemp.TryGetComponent<ImpulseForce2D>(out ImpulseForce2D component))
