@@ -163,6 +163,8 @@ MonoBehaviour:
     m_SceneName: Drug Injection
   - m_SceneAsset: {fileID: 102900000, guid: dd1ef6b0dec43784ab261caf4452a79a, type: 3}
     m_SceneName: Mom's Ashes
+  - m_SceneAsset: {fileID: 102900000, guid: 3fdc06109db952043b7759b3bc09490e, type: 3}
+    m_SceneName: Creepy Chest
 --- !u!114 &3620076782274629054
 MonoBehaviour:
   m_ObjectHideFlags: 0
