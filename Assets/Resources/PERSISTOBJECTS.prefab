@@ -186,6 +186,7 @@ MonoBehaviour:
   yourtTransition: {fileID: 7327560861359877818, guid: 8c3388572a0c6fd4c8a42c22fe8f1f3f, type: 3}
   socksTransition: {fileID: 2976067079144774073, guid: eba9f7a4df4b5a449bf921067ec0ec63, type: 3}
   ashesTransition: {fileID: 7651689689110265367, guid: 0625bb17c2ab8a64cb1f9b9c7d644b80, type: 3}
+  chestTransition: {fileID: 2287263820088043414, guid: f9eb659fd7c6be247a70beeff02266b6, type: 3}
 --- !u!1 &8741135162959299996
 GameObject:
   m_ObjectHideFlags: 0

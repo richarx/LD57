@@ -15,6 +15,7 @@ namespace SceneLoading
         [SerializeField] private GameObject yourtTransition;
         [SerializeField] private GameObject socksTransition;
         [SerializeField] private GameObject ashesTransition;
+        [SerializeField] private GameObject chestTransition;
 
         private Transform currentTransition;
         private SpriteRenderer currentSpriteRenderer;
@@ -37,8 +38,48 @@ namespace SceneLoading
                 yield return SaucetteTransition(transitionIN);
             else if (sceneName.Equals("Mom's Ashes"))
                 yield return AshesTransition(transitionIN);
+            else if (sceneName.Equals("Creepy Chest"))
+                yield return ChestTransition(transitionIN);
             else
                 yield return Tools.Fade(blackScreen, 0.7f, transitionIN);
+        }
+
+        private IEnumerator ChestTransition(bool transitionIn)
+        {
+            if (transitionIn)
+            {
+                currentTransition = Instantiate(chestTransition, Vector2.zero, Quaternion.identity, transform).transform;
+
+                Transform chestUp = currentTransition.GetChild(0);
+                Transform chestDown = currentTransition.GetChild(1);
+                
+                float duration = transitionDuration;
+                float deltaUp = 7.5f / duration;
+                float deltaDown = 6.0f / duration;
+                while (duration >= 0.0f)
+                {
+                    chestUp.position = new Vector3(0.0f, chestUp.position.y - deltaUp * Time.deltaTime, 0.0f);
+                    chestDown.position = new Vector3(0.0f, chestDown.position.y + deltaDown * Time.deltaTime, 0.0f);
+                    yield return null;
+                    duration -= Time.deltaTime;
+                }
+            }
+            else
+            {
+                Transform chestUp = currentTransition.GetChild(0);
+                Transform chestDown = currentTransition.GetChild(1);
+                
+                float duration = transitionDuration;
+                float deltaUp = 7.5f / duration;
+                float deltaDown = 6.0f / duration;
+                while (duration >= 0.0f)
+                {
+                    chestUp.position = new Vector3(0.0f, chestUp.position.y + deltaUp * Time.deltaTime, 0.0f);
+                    chestDown.position = new Vector3(0.0f, chestDown.position.y - deltaDown * Time.deltaTime, 0.0f);
+                    yield return null;
+                    duration -= Time.deltaTime;
+                }
+            }
         }
 
         private IEnumerator AshesTransition(bool transitionIn)
