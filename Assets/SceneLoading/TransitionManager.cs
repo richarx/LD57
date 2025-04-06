@@ -14,6 +14,7 @@ namespace SceneLoading
         [SerializeField] private GameObject mouthTransition;
         [SerializeField] private GameObject yourtTransition;
         [SerializeField] private GameObject socksTransition;
+        [SerializeField] private GameObject ashesTransition;
 
         private Transform currentTransition;
         private SpriteRenderer currentSpriteRenderer;
@@ -34,11 +35,27 @@ namespace SceneLoading
                 yield return YogurtTransition(transitionIN);
             else if (sceneName.Equals("Nail in the Foot"))
                 yield return SaucetteTransition(transitionIN);
+            else if (sceneName.Equals("Mom's Ashes"))
+                yield return AshesTransition(transitionIN);
             else
                 yield return Tools.Fade(blackScreen, 0.7f, transitionIN);
         }
 
-        
+        private IEnumerator AshesTransition(bool transitionIn)
+        {
+            if (transitionIn)
+            {
+                Vector2 startPosition = new Vector2(-0.36f, -9.81f);
+                currentTransition = Instantiate(ashesTransition, startPosition, Quaternion.identity, transform).transform;
+                yield return new WaitForSeconds(Mathf.Max(0.5f, transitionDuration));
+            }
+            else
+            {
+                currentTransition.GetComponent<Animator>().Play("CloudsOpen");
+                yield return new WaitForSeconds(Mathf.Max(0.5f, transitionDuration));
+                Destroy(currentTransition.gameObject);
+            }
+        }
 
         private IEnumerator MouthTransition(bool transitionIn)
         {
