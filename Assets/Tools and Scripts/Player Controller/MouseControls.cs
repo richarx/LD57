@@ -65,6 +65,7 @@ public class MouseControls : MonoBehaviour
         if (previousMousePos == null)
         {
             target.MoveAt(0);
+            currentMove = 0;
             previousMousePos = Input.mousePosition;
             return;
         }
