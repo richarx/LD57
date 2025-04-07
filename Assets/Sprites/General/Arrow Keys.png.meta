@@ -134,10 +134,10 @@ TextureImporter:
       name: Arrow Keys_1
       rect:
         serializedVersion: 2
-        x: 199
-        y: 153
-        width: 116
-        height: 115
+        x: 78
+        y: 151
+        width: 115
+        height: 116
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -147,6 +147,48 @@ TextureImporter:
       bones: []
       spriteID: 4ee5ef8bced67e14cb81b155c47d176e
       internalID: 199738648
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arrow Keys_2
+      rect:
+        serializedVersion: 2
+        x: 199
+        y: 153
+        width: 116
+        height: 114
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6bd20246f56486a49ad1b92f274e2db4
+      internalID: -46369402
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arrow Keys_3
+      rect:
+        serializedVersion: 2
+        x: 321
+        y: 153
+        width: 115
+        height: 116
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 71f36a111a8201b44829abda54bab05e
+      internalID: -683249909
       vertices: []
       indices: 
       edges: []
@@ -164,6 +206,8 @@ TextureImporter:
     nameFileIdTable:
       Arrow Keys_0: 882561927
       Arrow Keys_1: 199738648
+      Arrow Keys_2: -46369402
+      Arrow Keys_3: -683249909
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

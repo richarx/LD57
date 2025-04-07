@@ -17,7 +17,7 @@ namespace SceneLoading
 
         private TransitionManager transitionManager;
         
-        private int currentSceneIndex;
+        private int currentSceneIndex = -1; // because the intro scene is not in the scenes list.
 
         private void Awake()
         {

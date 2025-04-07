@@ -31,11 +31,7 @@ public class MouseControls : MonoBehaviour
 
     void Awake()
     {
-#if UNITY_WEBGL
-        isMobile = Application.isMobilePlatform || Input.touchSupported;
-#else
         isMobile = Application.isMobilePlatform;
-#endif
 
         target.MoveAt(0);
     }
@@ -55,7 +51,7 @@ public class MouseControls : MonoBehaviour
             return;
         }
 
-        if (isMobile && Input.touchCount == 0)
+        if (isMobile && Input.GetMouseButton(0) == false)
         {
             target.MoveAt(0);
             previousMousePos = null;

@@ -535,6 +535,7 @@ MonoBehaviour:
   volumeUpGraphic: {fileID: 1152609696763681771}
   volumeDownGraphic: {fileID: 7527310853830731068}
   audioMixer: {fileID: 24100000, guid: 77dd2daf55c568245b8ab6051acccc43, type: 2}
+  onChangeSound: {fileID: 8300000, guid: 22816ec43476c5c4ba6d5a5fa5b5a75a, type: 3}
 --- !u!1 &9180787192315998507
 GameObject:
   m_ObjectHideFlags: 0

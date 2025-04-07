@@ -19,6 +19,8 @@ public class VolumeManager : MonoBehaviour
     public Image volumeDownGraphic;
     [Space]
     public AudioMixer audioMixer;
+    [Space]
+    public AudioClip onChangeSound;
 
     Sequence volumeUpSequence;
     Sequence volumeDownSequence;
@@ -47,6 +49,8 @@ public class VolumeManager : MonoBehaviour
 
             currentVolume = Mathf.Clamp01(currentVolume + VolumeStep);
             ApplyVolumeToMixerGroup();
+
+            SFXManager.Instance.PlaySFX(onChangeSound, 1);
         }
 
         if (Input.GetKeyDown(VolumeDownKey))
@@ -61,6 +65,8 @@ public class VolumeManager : MonoBehaviour
 
             currentVolume = Mathf.Clamp01(currentVolume - VolumeStep);
             ApplyVolumeToMixerGroup();
+
+            SFXManager.Instance.PlaySFX(onChangeSound, 1);
         }
     }
 
