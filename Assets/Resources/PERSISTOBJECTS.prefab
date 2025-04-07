@@ -199,6 +199,7 @@ MonoBehaviour:
   drugTransition: {fileID: 5856427821957158084, guid: 7780b19fbad4ae14f804009b76606c03, type: 3}
   spaceTransition: {fileID: 1421200309435508562, guid: 3c56ba9d8d660e14980154b5a23e5058, type: 3}
   vampireTransition: {fileID: 8102364445851766286, guid: 6d9d90ec78424db469c2b4e87a62be18, type: 3}
+  ampliTransition: {fileID: 5859458650640860665, guid: 7aa0e251c5339a74f87be9ddcab173eb, type: 3}
 --- !u!1 &8741135162959299996
 GameObject:
   m_ObjectHideFlags: 0

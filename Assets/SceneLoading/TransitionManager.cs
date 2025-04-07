@@ -19,6 +19,7 @@ namespace SceneLoading
         [SerializeField] private GameObject drugTransition;
         [SerializeField] private GameObject spaceTransition;
         [SerializeField] private GameObject vampireTransition;
+        [SerializeField] private GameObject ampliTransition;
 
         private Transform currentTransition;
         private SpriteRenderer currentSpriteRenderer;
@@ -49,8 +50,37 @@ namespace SceneLoading
                 yield return SpaceTransition(transitionIN);
             else if (sceneName.Equals("Vampire"))
                 yield return VampireTransition(transitionIN);
+            else if (sceneName.Equals("Music"))
+                yield return MusicTransition(transitionIN);
             else
                 yield return Tools.Fade(blackScreen, 0.7f, transitionIN);
+        }
+
+        private IEnumerator MusicTransition(bool transitionIn)
+        {
+            if (transitionIn)
+            {
+                currentTransition = Instantiate(ampliTransition, Vector2.zero, Quaternion.identity, transform).transform;
+                SpriteRenderer background = currentTransition.GetChild(0).GetComponent<SpriteRenderer>();
+                Animator animator = currentTransition.GetComponent<Animator>();
+
+                yield return Tools.Fade(background, 0.5f, true);
+                
+                animator.Play("AmpliClose");
+                yield return new WaitForSeconds(2.0f);
+                
+            }
+            else
+            {
+                SpriteRenderer background = currentTransition.GetChild(0).GetComponent<SpriteRenderer>();
+                Animator animator = currentTransition.GetComponent<Animator>();
+                
+                animator.Play("AmpliOpen");
+                yield return new WaitForSeconds(1.0f);
+                
+                yield return Tools.Fade(background, 0.5f, false);
+                Destroy(currentTransition.gameObject);
+            }
         }
 
         private IEnumerator VampireTransition(bool transitionIn)
