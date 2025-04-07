@@ -159,6 +159,8 @@ MonoBehaviour:
     m_SceneName: Glotte
   - m_SceneAsset: {fileID: 102900000, guid: 014d8a93c7c21c540b733195c6efaf5c, type: 3}
     m_SceneName: Barbecue
+  - m_SceneAsset: {fileID: 102900000, guid: 826d9e0ddb7a5184ea126a6778e66159, type: 3}
+    m_SceneName: Music
   - m_SceneAsset: {fileID: 102900000, guid: dd1ef6b0dec43784ab261caf4452a79a, type: 3}
     m_SceneName: Mom's Ashes
   - m_SceneAsset: {fileID: 102900000, guid: f8b9db5af4236574898d35d41f060f7c, type: 3}
