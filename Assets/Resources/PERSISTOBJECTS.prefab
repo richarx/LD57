@@ -277,6 +277,7 @@ MonoBehaviour:
   spaceTransition: {fileID: 1421200309435508562, guid: 3c56ba9d8d660e14980154b5a23e5058, type: 3}
   vampireTransition: {fileID: 8102364445851766286, guid: 6d9d90ec78424db469c2b4e87a62be18, type: 3}
   ampliTransition: {fileID: 5859458650640860665, guid: 7aa0e251c5339a74f87be9ddcab173eb, type: 3}
+  introTransition: {fileID: 6023084197125245479, guid: 299663c6dce4df541acc6293b88bd863, type: 3}
 --- !u!1 &8101318156622486191
 GameObject:
   m_ObjectHideFlags: 0

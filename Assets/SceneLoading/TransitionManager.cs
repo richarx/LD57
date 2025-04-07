@@ -20,6 +20,7 @@ namespace SceneLoading
         [SerializeField] private GameObject spaceTransition;
         [SerializeField] private GameObject vampireTransition;
         [SerializeField] private GameObject ampliTransition;
+        [SerializeField] private GameObject introTransition;
 
         private Transform currentTransition;
         private SpriteRenderer currentSpriteRenderer;
@@ -52,8 +53,25 @@ namespace SceneLoading
                 yield return VampireTransition(transitionIN);
             else if (sceneName.Equals("Music"))
                 yield return MusicTransition(transitionIN);
+            else if (sceneName.Equals("Intro"))
+                yield return IntroTransition(transitionIN);
             else
                 yield return Tools.Fade(blackScreen, 0.7f, transitionIN);
+        }
+
+        private IEnumerator IntroTransition(bool transitionIn)
+        {
+            if (transitionIn)
+            {
+                currentTransition = Instantiate(introTransition, Vector2.zero, Quaternion.identity, transform).transform;
+                yield return new WaitForSeconds(2.0f);
+            }
+            else
+            {
+                currentTransition.GetComponent<Animator>().Play("Intro_Open");
+                yield return new WaitForSeconds(1.5f);
+                Destroy(currentTransition.gameObject);
+            }
         }
 
         private IEnumerator MusicTransition(bool transitionIn)
