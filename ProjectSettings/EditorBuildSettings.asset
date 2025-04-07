@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/Intro.unity
+    guid: 56d55a57d3dde154d91aa85f1051f35b
+  - enabled: 1
     path: Assets/Scenes/Bubble Tea.unity
     guid: b64a8fa52a3aa994897ce69e97701175
   - enabled: 1
