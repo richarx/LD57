@@ -36,6 +36,18 @@ public class MouseControls : MonoBehaviour
         target.MoveAt(0);
     }
 
+    void OnApplicationPause(bool isPaused)
+    {
+        if (isPaused)
+            previousMousePos = null;
+    }
+
+    void OnApplicationFocus(bool hasFocus)
+    {
+        if (!hasFocus)
+            previousMousePos = null;
+    }
+
     void Update()
     {
         inputLimiter += Time.deltaTime;
