@@ -38,13 +38,13 @@ public class MouseControls : MonoBehaviour
 
     void OnApplicationPause(bool isPaused)
     {
-        if (isPaused)
+        if (!isPaused)
             previousMousePos = null;
     }
 
     void OnApplicationFocus(bool hasFocus)
     {
-        if (!hasFocus)
+        if (hasFocus)
             previousMousePos = null;
     }
 
