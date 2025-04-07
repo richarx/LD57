@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class FadeInBloodScreen : MonoBehaviour
 {
-    public Image overlay;
+    public SpriteRenderer overlay;
     public float fadeInDuration;
 
     IEnumerator Start()
