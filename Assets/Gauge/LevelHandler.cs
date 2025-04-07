@@ -6,6 +6,7 @@ using VictoryText;
 public class LevelHandler : MonoBehaviour
 {
     public bool testMode;
+    public bool forceSuccess = false;
     public float delayBeforeNextScene;
 
     public float minInterval;
@@ -41,8 +42,19 @@ public class LevelHandler : MonoBehaviour
         else
             TriggerFailureTooMuch();
 
-        if (!testMode || !Application.isEditor)
+#if UNITY_EDITOR
+        if (testMode)
+            return;
+#endif
+
+        if (forceSuccess && (sliderValue < minInterval || sliderValue > maxInterval))
+        {
+            SceneLoaderManager.instance.ReloadCurrentScene(delayBeforeNextScene);
+        }
+        else
+        {
             SceneLoaderManager.instance.LoadNextScene(delayBeforeNextScene);
+        }
     }
 
     private void TriggerSuccess()
@@ -59,6 +71,7 @@ public class LevelHandler : MonoBehaviour
 
         EndTextManager.instance.SpawnText(success, delayBeforeText, textDuration, EndTextManager.ScoreState.Success);
     }
+
     private void TriggerFailureTooMuch()
     {
         foreach (GameObject go in gameObjectsToActivateOnFailureTooMuch)

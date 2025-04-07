@@ -29,9 +29,32 @@ namespace SceneLoading
         private void Update()
         {
             if (Input.GetKeyDown(KeyCode.R))
-                SceneManager.LoadScene(SceneManager.GetActiveScene().name, LoadSceneMode.Single);
+                ReloadCurrentScene(0);
         }
 #endif
+
+        public void ReloadCurrentScene(float delay)
+        {
+            StartCoroutine(ReloadCurrentSceneCoroutine(delay));
+        }
+
+        private IEnumerator ReloadCurrentSceneCoroutine(float delay)
+        {
+            yield return new WaitForSeconds(delay);
+
+            endTextManager.ClearText();
+
+            string currentSceneName = SceneManager.GetActiveScene().name;
+
+            IsTransitioning = true;
+            yield return transitionManager.PlayTransition(currentSceneName, true);
+
+            AsyncOperation loadingOperation = SceneManager.LoadSceneAsync(currentSceneName);
+            yield return new WaitUntil(() => loadingOperation.isDone);
+
+            yield return transitionManager.PlayTransition(currentSceneName, false);
+            IsTransitioning = false;
+        }
 
         public void LoadNextScene(float delay)
         {
