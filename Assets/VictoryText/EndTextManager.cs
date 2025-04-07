@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using Random = UnityEngine.Random;
@@ -19,6 +20,10 @@ namespace VictoryText
         [SerializeField] private GameObject faceSuccessPrefab;
         [SerializeField] private GameObject faceFailurePrefab;
         [SerializeField] private GameObject faceFailureMidPrefab;
+
+        [SerializeField] private List<AudioClip> victorySounds;
+        [SerializeField] private List<AudioClip> tooDeepSounds;
+        [SerializeField] private List<AudioClip> notEnoughSounds;
 
         public static EndTextManager instance;
 
@@ -53,7 +58,14 @@ namespace VictoryText
 
             currentFace = Instantiate(GetFace(state), Vector2.zero + (Random.insideUnitCircle.normalized * 2.5f), Quaternion.identity);
             currentFace.transform.rotation = Vector2.right.AddRandomAngleToDirection(-25.0f, 25.0f).ToRotation();
-            
+
+            if (state == ScoreState.Success)
+                SFXManager.Instance.PlayRandomSFX(victorySounds.ToArray(), 1.0f);
+            else if (state == ScoreState.TooMuch)
+                SFXManager.Instance.PlayRandomSFX(tooDeepSounds.ToArray(), 1.0f);
+            else
+                SFXManager.Instance.PlayRandomSFX(notEnoughSounds.ToArray(), 1.0f);
+
             currentTextObject = Instantiate(textPrefab, transform.position, Quaternion.identity, transform);
 
             TextMeshProUGUI textMeshProUGUI = currentTextObject.transform.GetChild(0).GetComponent<TextMeshProUGUI>();
