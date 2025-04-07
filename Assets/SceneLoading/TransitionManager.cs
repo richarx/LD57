@@ -18,6 +18,7 @@ namespace SceneLoading
         [SerializeField] private GameObject chestTransition;
         [SerializeField] private GameObject drugTransition;
         [SerializeField] private GameObject spaceTransition;
+        [SerializeField] private GameObject vampireTransition;
 
         private Transform currentTransition;
         private SpriteRenderer currentSpriteRenderer;
@@ -46,8 +47,70 @@ namespace SceneLoading
                 yield return DrugTransition(transitionIN);
             else if (sceneName.Equals("Barbecue"))
                 yield return SpaceTransition(transitionIN);
+            else if (sceneName.Equals("Vampire"))
+                yield return VampireTransition(transitionIN);
             else
                 yield return Tools.Fade(blackScreen, 0.7f, transitionIN);
+        }
+
+        private IEnumerator VampireTransition(bool transitionIn)
+        {
+            if (transitionIn)
+            {
+                currentTransition = Instantiate(vampireTransition, Vector2.zero, Quaternion.identity, transform).transform;
+
+                SpriteRenderer background = currentTransition.GetChild(0).GetComponent<SpriteRenderer>();
+                yield return Tools.Fade(background, 0.5f, true);
+
+                Transform edouardo = currentTransition.GetChild(1);
+                Transform heart_1 = currentTransition.GetChild(2);
+                Transform heart_2 = currentTransition.GetChild(3);
+                
+                Vector3 scale = Vector3.zero;
+
+                float duration = transitionDuration;
+                float delta = 2.5f / duration;
+                while (duration >= 0.0f)
+                {
+                    scale.x += delta * Time.deltaTime;
+                    scale.y += delta * Time.deltaTime;
+                    scale.z += delta * Time.deltaTime;
+                    edouardo.localScale = scale;
+                    heart_1.localScale = scale;
+                    heart_2.localScale = scale;
+
+                    yield return null;
+                    duration -= Time.deltaTime;
+                }
+            }
+            else
+            {
+                SpriteRenderer background = currentTransition.GetChild(0).GetComponent<SpriteRenderer>();
+
+                Transform edouardo = currentTransition.GetChild(1);
+                Transform heart_1 = currentTransition.GetChild(2);
+                Transform heart_2 = currentTransition.GetChild(3);
+                
+                Vector3 scale = new Vector3(2.5f, 2.5f, 2.5f);
+
+                float duration = transitionDuration;
+                float delta = 2.5f / duration;
+                while (duration >= 0.0f)
+                {
+                    scale.x -= delta * Time.deltaTime;
+                    scale.y -= delta * Time.deltaTime;
+                    scale.z -= delta * Time.deltaTime;
+                    edouardo.localScale = scale;
+                    heart_1.localScale = scale;
+                    heart_2.localScale = scale;
+
+                    yield return null;
+                    duration -= Time.deltaTime;
+                }
+                
+                yield return Tools.Fade(background, 0.5f, false);
+                Destroy(currentTransition.gameObject);
+            }
         }
 
         private IEnumerator SpaceTransition(bool transitionIn)
