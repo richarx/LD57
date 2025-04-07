@@ -171,7 +171,7 @@ MonoBehaviour:
   delayBeforeNextScene: 3
   minInterval: 0.3
   maxInterval: 0.7
-  delayBeforeText: 0.5
+  delayBeforeText: 1
   textDuration: 3
   success: Minty fresh
   failTooMuch: Hold your thumbs
@@ -332,6 +332,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shakePower: 0.01
+  useLocalPosition: 0
 --- !u!1 &378382362
 GameObject:
   m_ObjectHideFlags: 0
@@ -533,6 +534,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shakePower: 0.01
+  useLocalPosition: 0
 --- !u!1 &462711507
 GameObject:
   m_ObjectHideFlags: 0
@@ -959,6 +961,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shakePower: 0.01
+  useLocalPosition: 0
 --- !u!1 &761511499
 GameObject:
   m_ObjectHideFlags: 0
@@ -1173,6 +1176,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shakePower: 0.01
+  useLocalPosition: 0
 --- !u!1 &1169554355
 GameObject:
   m_ObjectHideFlags: 0
@@ -2345,6 +2349,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shakePower: 0.01
+  useLocalPosition: 0
 --- !u!1001 &1705814899
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2697,6 +2702,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shakePower: 0.02
+  useLocalPosition: 0
 --- !u!1 &1851566678
 GameObject:
   m_ObjectHideFlags: 0
@@ -2795,6 +2801,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shakePower: 0.01
+  useLocalPosition: 0
 --- !u!1 &1855340585
 GameObject:
   m_ObjectHideFlags: 0
@@ -2893,6 +2900,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shakePower: 0.01
+  useLocalPosition: 0
 --- !u!1 &1871298658
 GameObject:
   m_ObjectHideFlags: 0
@@ -2991,6 +2999,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shakePower: 0.01
+  useLocalPosition: 0
 --- !u!1001 &1935211612
 PrefabInstance:
   m_ObjectHideFlags: 0

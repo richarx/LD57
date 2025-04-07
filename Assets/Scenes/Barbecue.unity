@@ -2141,10 +2141,10 @@ MonoBehaviour:
   delayBeforeNextScene: 3
   minInterval: 0.3
   maxInterval: 0.7
-  delayBeforeText: 0.5
+  delayBeforeText: 1
   textDuration: 3
-  success: Bone apple tea
-  failTooMuch: FOOOOD
+  success: Bone Apple Tea
+  failTooMuch: Where food
   failNotEnough: Hungry
   gameObjectsToActivateOnSuccess:
   - {fileID: 5914166029101841520}
