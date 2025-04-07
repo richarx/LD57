@@ -146,6 +146,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: daca6648f6184d34ba6c4d0d9bea8a11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  endTextManager: {fileID: 4771774664632623336}
   scenes:
   - m_SceneAsset: {fileID: 102900000, guid: b64a8fa52a3aa994897ce69e97701175, type: 3}
     m_SceneName: Bubble Tea

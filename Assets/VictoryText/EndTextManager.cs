@@ -22,9 +22,24 @@ namespace VictoryText
 
         public static EndTextManager instance;
 
+        private GameObject currentFace;
+        private GameObject currentTextObject;
+        
+
         private void Awake()
         {
             instance = this;
+        }
+
+        public void ClearText()
+        {
+            StopAllCoroutines();
+            
+            Destroy(currentFace);
+            Destroy(currentTextObject);
+
+            currentFace = null;
+            currentTextObject = null;
         }
 
         public void SpawnText(string text, float delay, float displayDuration, ScoreState state)
@@ -36,18 +51,22 @@ namespace VictoryText
         {
             yield return new WaitForSeconds(delay);
 
-            GameObject face = Instantiate(GetFace(state), Vector2.zero + (Random.insideUnitCircle.normalized * 2.5f), Quaternion.identity);
-            face.transform.rotation = Vector2.right.AddRandomAngleToDirection(-25.0f, 25.0f).ToRotation();
+            currentFace = Instantiate(GetFace(state), Vector2.zero + (Random.insideUnitCircle.normalized * 2.5f), Quaternion.identity);
+            currentFace.transform.rotation = Vector2.right.AddRandomAngleToDirection(-25.0f, 25.0f).ToRotation();
             
-            GameObject textObject = Instantiate(textPrefab, transform.position, Quaternion.identity, transform);
+            currentTextObject = Instantiate(textPrefab, transform.position, Quaternion.identity, transform);
 
-            TextMeshProUGUI textMeshProUGUI = textObject.transform.GetChild(0).GetComponent<TextMeshProUGUI>();
+            TextMeshProUGUI textMeshProUGUI = currentTextObject.transform.GetChild(0).GetComponent<TextMeshProUGUI>();
             textMeshProUGUI.text = text;
 
-            textObject.transform.rotation = Vector2.right.AddRandomAngleToDirection(-25.0f, 25.0f).ToRotation();
+            currentTextObject.transform.rotation = Vector2.right.AddRandomAngleToDirection(-25.0f, 25.0f).ToRotation();
 
-            Destroy(textObject, displayDuration);
-            Destroy(face, displayDuration);
+            yield return new WaitForSeconds(displayDuration);
+            
+            if (currentFace != null)
+                Destroy(currentFace);
+            if (currentTextObject != null)
+                Destroy(currentTextObject);
         }
 
         private GameObject GetFace(ScoreState state)

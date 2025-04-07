@@ -2,11 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using VictoryText;
 
 namespace SceneLoading
 {
     public class SceneLoaderManager : MonoBehaviour
     {
+        [SerializeField] private EndTextManager endTextManager;
         [SerializeField] private List<SceneField> scenes;
         
         public static SceneLoaderManager instance;
@@ -39,6 +41,8 @@ namespace SceneLoading
         private IEnumerator LoadNextSceneCoroutine(float delay)
         {
             yield return new WaitForSeconds(delay);
+            
+            endTextManager.ClearText();
             
             string currentSceneName = SceneManager.GetActiveScene().name;
             
