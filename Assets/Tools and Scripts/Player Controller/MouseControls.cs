@@ -23,6 +23,9 @@ public class MouseControls : MonoBehaviour
     float currentMove;
     Vector3 previousMousePos;
 
+    private float inputLimiter = 0f;
+    public float noInputDuration;
+
     void Awake()
     {
         previousMousePos = Input.mousePosition;
@@ -31,6 +34,14 @@ public class MouseControls : MonoBehaviour
     void Update()
     {
         if (SceneLoaderManager.IsTransitioning)
+        {
+            previousMousePos = Input.mousePosition;
+            target.MoveAt(0);
+            return;
+        }
+
+        inputLimiter += Time.deltaTime;
+        if (inputLimiter < noInputDuration)
         {
             previousMousePos = Input.mousePosition;
             target.MoveAt(0);
