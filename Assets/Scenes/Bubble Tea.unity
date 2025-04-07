@@ -316,6 +316,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   testMode: 0
+  forceSuccess: 0
   delayBeforeNextScene: 3
   minInterval: 0.3
   maxInterval: 0.7
@@ -3635,7 +3636,7 @@ MonoBehaviour:
   direction: 2
   screenDistanceRatio: 0.25
   target: {fileID: 406208061}
-  noInputDuration: 2.3
+  noInputDuration: 2.1
 --- !u!1 &2003001572
 GameObject:
   m_ObjectHideFlags: 0

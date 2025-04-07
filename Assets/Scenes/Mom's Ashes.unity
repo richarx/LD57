@@ -1323,6 +1323,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   testMode: 0
+  forceSuccess: 0
   delayBeforeNextScene: 3
   minInterval: 0.3
   maxInterval: 0.7
@@ -3509,7 +3510,7 @@ MonoBehaviour:
   direction: 1
   screenDistanceRatio: 0.3
   target: {fileID: 1136859348}
-  noInputDuration: 2.3
+  noInputDuration: 2.1
 --- !u!1001 &907552302
 PrefabInstance:
   m_ObjectHideFlags: 0

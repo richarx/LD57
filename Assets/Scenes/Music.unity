@@ -645,6 +645,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   testMode: 0
+  forceSuccess: 0
   delayBeforeNextScene: 3
   minInterval: 0.3
   maxInterval: 0.7
@@ -2352,7 +2353,7 @@ MonoBehaviour:
   direction: 2
   screenDistanceRatio: 0.2
   target: {fileID: 1911109787}
-  noInputDuration: 2.3
+  noInputDuration: 2.1
 --- !u!4 &1721675697 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1308692075972978607, guid: f16568b4fe830c044828b08c28f0bcaf, type: 3}
