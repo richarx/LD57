@@ -32,6 +32,7 @@ public class MouseControls : MonoBehaviour
     {
         if (SceneLoaderManager.IsTransitioning)
         {
+            previousMousePos = Input.mousePosition;
             target.MoveAt(0);
             return;
         }

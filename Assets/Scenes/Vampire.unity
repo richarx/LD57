@@ -396,9 +396,9 @@ MonoBehaviour:
   maxInterval: 0.7
   delayBeforeText: 1
   textDuration: 3
-  success: sweet dreams
-  failTooMuch: sucks
-  failNotEnough: team Edward
+  success: Sweet dreams
+  failTooMuch: Sucks
+  failNotEnough: Team Edward
   gameObjectsToActivateOnSuccess:
   - {fileID: 1643986466}
   - {fileID: 1858207015}

@@ -528,11 +528,9 @@ MonoBehaviour:
   maxInterval: 0.7
   delayBeforeText: 1
   textDuration: 3
-  success: depth metal
-  failTooMuch: 'in too deep
-
-'
-  failNotEnough: rock off
+  success: Depth metal
+  failTooMuch: In too deep
+  failNotEnough: Rock off
   gameObjectsToActivateOnSuccess:
   - {fileID: 317201891}
   - {fileID: 1145042742}
