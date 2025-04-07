@@ -15,40 +15,61 @@ public class MouseControls : MonoBehaviour
     [SerializeField] float screenDistanceRatio = 0.2f;
     [Space]
     [SerializeField] RailMovement target;
+    [Space]
+    public float noInputDuration;
 
     public static UnityEvent<float> OnComplete = new();
 
     readonly List<float> storedSpeeds = new();
 
     float currentMove;
-    Vector3 previousMousePos;
+    Vector3? previousMousePos;
 
     private float inputLimiter = 0f;
-    public float noInputDuration;
+
+    bool isMobile;
 
     void Awake()
     {
-        previousMousePos = Input.mousePosition;
+#if UNITY_WEBGL
+        isMobile = Application.isMobilePlatform || Input.touchSupported;
+#else
+        isMobile = Application.isMobilePlatform;
+#endif
+
+        target.MoveAt(0);
     }
 
     void Update()
     {
-        if (SceneLoaderManager.IsTransitioning)
-        {
-            previousMousePos = Input.mousePosition;
-            target.MoveAt(0);
-            return;
-        }
-
         inputLimiter += Time.deltaTime;
         if (inputLimiter < noInputDuration)
         {
-            previousMousePos = Input.mousePosition;
             target.MoveAt(0);
             return;
         }
 
-        Vector2 mouseMoveThisFrame = (previousMousePos - Input.mousePosition);
+        if (SceneLoaderManager.IsTransitioning)
+        {
+            target.MoveAt(0);
+            return;
+        }
+
+        if (isMobile && Input.touchCount == 0)
+        {
+            target.MoveAt(0);
+            previousMousePos = null;
+            return;
+        }
+
+        if (previousMousePos == null)
+        {
+            target.MoveAt(0);
+            previousMousePos = Input.mousePosition;
+            return;
+        }
+
+        Vector2 mouseMoveThisFrame = (previousMousePos.Value - Input.mousePosition);
 
         float mouseMoveInDirThisFrame = direction.GetValueInDirection(mouseMoveThisFrame);
 
